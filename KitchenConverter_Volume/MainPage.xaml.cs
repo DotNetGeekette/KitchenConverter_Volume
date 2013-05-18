@@ -13,11 +13,13 @@ namespace KitchenConverter_Volume
 {
     public partial class MainPage : PhoneApplicationPage
     {
+        private String[] units = { "teaspoons (tsp)", "tablespoons (tbsp)", "cups", "pints", "quarts", "gallons" };
         // Constructor
         public MainPage()
         {
+            
             InitializeComponent();
-
+            this.Units.ItemsSource = units;
             // Sample code to localize the ApplicationBar
             //BuildLocalizedApplicationBar();
         }
