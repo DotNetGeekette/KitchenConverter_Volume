@@ -33,8 +33,12 @@
                 <RowDefinition Height="*"/>
             </Grid.RowDefinitions>
 
+            <StackPanel Grid.Row="1">
+                <TextBlock TextAlignment="Center">Equivalent to:</TextBlock>
+                <TextBlock x:Name="Measurement1" TextAlignment="Center"></TextBlock>
+                <TextBlock x:Name="Measurement2" TextAlignment="Center"></TextBlock>
+            </StackPanel>
             
-            <TextBlock Grid.Row="1" TextAlignment="Center" Foreground="Aqua">This is something else!</TextBlock>
         </Grid>
         <Grid x:Name="InputControls" Grid.Row="1" Margin="12,0,12,0">
             <Grid.RowDefinitions>
@@ -50,8 +54,8 @@
                     <RowDefinition Height="*"/>
                     
                 </Grid.RowDefinitions>
-                <TextBox x:Name="Number" Height="75" InputScope="Number" Grid.Row="0" Grid.Column="0" VerticalAlignment="Top" Margin="0,9,0,0"></TextBox>
-                <toolkit:ListPicker Grid.Row="0" Grid.Column="1" VerticalAlignment="Top">
+                <TextBox x:Name="Number" Height="75" InputScope="Number" TextChanged="Recalculate" Grid.Row="0" Grid.Column="0" VerticalAlignment="Top" Margin="0,9,0,0"></TextBox>
+                <toolkit:ListPicker Grid.Row="0" Grid.Column="1" VerticalAlignment="Top" SelectionChanged="Recalculate">
                     <toolkit:ListPickerItem x:Name="tsp" Content="teaspoons"  />
                     <toolkit:ListPickerItem x:Name="tbsp" Content="tablespoons" />
                     <toolkit:ListPickerItem x:Name="cup" Content="cups" />
