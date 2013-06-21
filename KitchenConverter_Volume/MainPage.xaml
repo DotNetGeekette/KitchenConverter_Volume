@@ -33,12 +33,39 @@
                 <RowDefinition Height="*"/>
             </Grid.RowDefinitions>
 
-            <StackPanel Grid.Row="1">
-                <TextBlock TextAlignment="Center">Equivalent to:</TextBlock>
-                <TextBlock x:Name="Measurement1" TextAlignment="Center"></TextBlock>
-                <TextBlock x:Name="Measurement2" TextAlignment="Center"></TextBlock>
-            </StackPanel>
-            
+            <Grid Grid.Row="1" x:Name="Equivalent" Margin="12,0,12,0">
+                <Grid.ColumnDefinitions>
+                     <ColumnDefinition Width="*"/>   
+                     <ColumnDefinition Width="2*"/>
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="20"/>
+                    <RowDefinition Height="3*"/>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="3*"/>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="3*"/>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="2*"/>
+                </Grid.RowDefinitions>
+                
+                <Image Source="Assets/Teaspoon.png" Grid.Row="1" Grid.Column="0" />
+                <StackPanel Grid.Row="1" Grid.Column="1">
+                    <TextBlock Text="Teaspoons" />
+                    <TextBlock x:Name="equalsTsp" FontSize="56"/>
+                </StackPanel>
+                <Image Source="Assets/Tablespoon.png" Grid.Row="3" Grid.Column="0" />
+                <StackPanel Grid.Row="3" Grid.Column="1">
+                    <TextBlock Text="Tablespoons" />
+                    <TextBlock x:Name="equalsTbsp" FontSize="56"/>
+                </StackPanel>
+                <Image Source="Assets/Measuring Cup.png" Grid.Row="5" Grid.Column="0" />
+                <StackPanel Grid.Row="5" Grid.Column="1">
+                    <TextBlock Text="Cups" />
+                    <TextBlock x:Name="equalsCup" FontSize="56"/>
+                </StackPanel>
+                <Button x:Name="AboutBtn"  Grid.Row="7" Grid.ColumnSpan="2" Click="AboutBtn_Click">About This App</Button>
+            </Grid>
         </Grid>
         <Grid x:Name="InputControls" Grid.Row="1" Margin="12,0,12,0">
             <Grid.RowDefinitions>
@@ -54,13 +81,13 @@
                     <RowDefinition Height="*"/>
                     
                 </Grid.RowDefinitions>
-                <TextBox x:Name="Number" Height="75" InputScope="Number" TextChanged="Recalculate" Grid.Row="0" Grid.Column="0" VerticalAlignment="Top" Margin="0,9,0,0"></TextBox>
-                <toolkit:ListPicker Grid.Row="0" Grid.Column="1" VerticalAlignment="Top" SelectionChanged="Recalculate">
-                    <toolkit:ListPickerItem x:Name="tsp" Content="teaspoons"  />
-                    <toolkit:ListPickerItem x:Name="tbsp" Content="tablespoons" />
-                    <toolkit:ListPickerItem x:Name="cup" Content="cups" />
+                <TextBox x:Name="Number" Height="75" InputScope="Number" TextChanged="Recalculate" Grid.Row="0" Grid.Column="0" VerticalAlignment="Top" Margin="0,9,0,0" Background="White"></TextBox>
+                <toolkit:ListPicker x:Name="Units" Grid.Row="0" Grid.Column="1" VerticalAlignment="Top" SelectionChanged="Recalculate" >
+                    <toolkit:ListPickerItem x:Name="tsp" Content="teaspoons" Background="White" />
+                    <toolkit:ListPickerItem x:Name="tbsp" Content="tablespoons" Background="White" />
+                    <toolkit:ListPickerItem x:Name="cup" Content="cups" Background="White" />
                 </toolkit:ListPicker>
-             </Grid>
+            </Grid>
             
             
         </Grid>
