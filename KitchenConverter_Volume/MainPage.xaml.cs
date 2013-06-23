@@ -83,7 +83,7 @@ namespace KitchenConverter_Volume
         {
             equalsTsp.Text = FormatNumber(quantity * 3);
             equalsTbsp.Text = FormatNumber(quantity);
-            equalsCup.Text = FormatNumber(quantity * 16);
+            equalsCup.Text = FormatNumber(quantity / 16);
         }
 
         private void ConvertFromCups(double quantity)
